@@ -1,5 +1,7 @@
 /* Styles Toolbar gvNIX */
 
+.navbar-inverse{ border-bottom: 2px solid #577520;}
+
 /* Toobar nav top menu */
 
 body.top > .navbar.navbar-default.navbar-fixed-top + #wrap-main{
@@ -24,20 +26,22 @@ body.top .navbar-fixed-top + .navbar-fixed-top {
   }
 body.top .sidebar.navbar-fixed-top,
 body.top .navbar-default.navbar-fixed-top{
-   margin-top: 50px;
+   margin-top: 52px;
    }
 
-body.top .navbar-default.navbar-fixed-top .navbar-nav>li>a{ color: #999;}
+body.top .navbar-default.navbar-fixed-top .navbar-nav>li>a{ color: #acc47f;}
+
+body.top .navbar-default.navbar-fixed-top .navbar-brand:hover,
+body.top .navbar-default.navbar-fixed-top .navbar-brand:focus
 body.top .navbar-default.navbar-fixed-top .navbar-nav>li>a:hover,
 body.top .navbar-default.navbar-fixed-top .navbar-brand{
     color: #43600E;
   }
 
-
 /* Toolbar - sidebar menu */
 
 header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
-  margin-top: 50px;
+  margin-top: 52px;
 }
 
 @media (min-width: 768px) {
@@ -71,15 +75,16 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     max-width: 200px;
     margin-bottom: 0;
     border: 0px solid transparent;
+    background: #608224;
+    top: 52px;
   }
 
   header.navbar-fixed-top + aside > nav.sidebar{
     margin-top: -19px;
   }
-
   body.left nav.navbar-fixed-side-left {
     left: 0;
-    margin-left: -160px;
+    /* margin-left: -160px; */ /* TBC temp para mostrar siempre*/
     float: left;
     z-index: 8000;
   }
@@ -97,6 +102,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     nav.sidebar.navbar>.container .navbar-brand,
     nav.sidebar.navbar>.container-fluid .navbar-brand {
       margin-left: 0px;
+      border-bottom: 5px solid #577520;
     }
     /*Center Brand*/
     nav.sidebar .navbar-brand,
@@ -105,14 +111,27 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
       width: 100%;
       margin-left: 0px;
     }
-    /*adds border top to first nav box */
-    nav.sidebar .navbar-nav > li:first-child{
-      border-top: 1px #e5e5e5 solid;
-    }
     /*adds border to bottom nav boxes*/
     nav.sidebar .navbar-nav > li{
-      border-bottom: 1px #e5e5e5 solid;
+      min-height: 30px;
+      line-height: 30px;
+      text-indent: 20px;
     }
+    nav.sidebar .navbar-nav > li a{
+      padding: 15px;
+      color: #acc47f;
+      border-top: 2px solid rgba(255,255,255,0.1);
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+    }
+    nav.sidebar .navbar-nav > li:hover{
+      border-top-color: rgba(255,255,255,0.2);
+      border-bottom-color: rgba(0,0,0,0.2);
+    }
+
+    /*adds border top to first nav box */
+    nav.sidebar .navbar-nav > li:first-child{
+    }
+
     /* adds background on hover */
     nav.sidebar .navbar-nav > li:hover{
       color: #fff;
@@ -120,7 +139,8 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     }
     /* removes border last element */
     nav.sidebar .navbar-nav > li.last{
-      border-bottom: none;
+      /* border-bottom: none; */
+      /*TBC*/
     }
     /* Colors/style dropdown box*/
     nav.sidebar .navbar-nav .open .dropdown-menu {
@@ -136,7 +156,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     /*allows nav box to use 100% width*/
     nav.sidebar .navbar-collapse,
     nav.sidebar .container-fluid{
-      padding: 0 0px 0 0px;
+      padding: 0;
     }
     /*colors dropdown box text */
     nav.sidebar.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
@@ -163,6 +183,9 @@ nav.sidebar:hover .forAnimate{
 nav.sidebar .glyphicon{
   font-size: 16px;
 }
+aside .navbar-nav {
+    margin: 0;
+}
 
 /* Toolbar nav left - sidebar menu */
 
@@ -180,12 +203,15 @@ nav.sidebar .glyphicon{
       margin-left: 200px;
     }
     /*Center Icons*/
-    body.left nav.sidebar a{
+    nav.navbar-fixed-side-left a{
       padding-right: 13px;
     }
     /* Move nav to full on mouse over*/
-    body.left nav.sidebar:hover{
+    nav.navbar-fixed-side-left:hover{
       margin-left: 0px;
+    }
+    nav.navbar-fixed-side-left .glyphicon{
+      margin-left: 15px;
     }
 }
 
@@ -206,14 +232,14 @@ nav.sidebar .glyphicon{
       margin-left: -200px;
     }
     /*Center Icons*/
-    body.right nav.sidebar a{
+    nav.navbar-fixed-side-right a{
       padding-left: 13px;
     }
     /* Move nav to full on mouse over*/
-    body.right nav.sidebar:hover{
+    nav.navbar-fixed-side-right:hover{
       margin-right: 0px;
     }
-    body.right nav.sidebar .glyphicon{
+    nav.navbar-fixed-side-right .glyphicon{
       margin-right: 15px;
     }
   }
@@ -222,7 +248,7 @@ nav.sidebar .glyphicon{
 
 body.bottom { padding-bottom: 70px; }
 
-/* NOTA: ivace proyecto: dos toolbars activos */
+/* NOTA: ivace proyecto: es posible dos toolbars activos */
 
 /* body.left .sidebar.navbar-fixed-top{
   margin-top: 101px;
@@ -239,11 +265,13 @@ body.left > aside + #wrap-main {
  body.top .navbar-fixed-top + aside>.sidebar.navbar-fixed-top{
    z-index: 800;
  }
- body.top .navbar-fixed-top + .navbar-fixed-top {
+}
+ */
+@media (min-width: 768px) {
+  body.top .navbar-fixed-top + .navbar-fixed-top {
     z-index: 900;
   }
   body.left .sidebar.navbar-fixed-top{
      z-index: 800;
   }
 }
- */

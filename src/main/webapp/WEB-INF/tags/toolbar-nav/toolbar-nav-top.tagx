@@ -20,14 +20,42 @@ xmlns:spring="http://www.springframework.org/tags" version="2.0">
     </div>
 
     <div class="collapse navbar-collapse top-navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Tool 1</a>
-                </li>
-                <li>
-                    <a href="#">Tool 2</a>
-                </li>
-            </ul>
+      <ul class="nav navbar-nav">
+        <li>
+            <button type="submit" title="Botón SQL" onclick="fn_changeFormAttribute(this.id); fn_getFormAction(this.id)" id="b_main_toolbar_funcion_sql" formaction="funcionsql" form="">
+            Botón SQL <i class="fa fa-database">&#160;</i>
+            </button>
+        </li>
+        <li>
+            <button type="submit" title="Botón Java" onclick="fn_changeFormAttribute(this.id); fn_getFormAction(this.id)" id="b_main_toolbar_funcion_java" formaction="funcionjava" form="">
+            Botón Java <i class="fa fa-code">&#160;</i>
+            </button>
+        </li>
+        <li>
+            <button title="Limpiar formulario" onclick="f_toolbar_limpiar_formulario();" id="b_main_toolbar_limpiar_formulario">
+            Limpiar formulario <i class="fa fa-desktop">&#160;</i>
+           </button>
+        </li>
+        <li>
+            <button type="submit" onclick="fn_changeFormAttribute(this.id); fn_changeFormMethodForCreate(this.id);" id="main_toolbar_btn_create" form="">
+              Crear <span class="glyphicon glyphicon-plus">&#160;</span>
+            </button>
+        </li>
+        <li>
+            <button type="submit" onclick="fn_changeFormAttribute(this.id);" id="main_toolbar_btn_update" form="">
+            Actualizar <span class="glyphicon glyphicon-pencil">&#160;</span>
+            </button>
+        </li>
+        <li>
+            <form id="command" action="/proofaedl/agentes/datosagente" method="post">
+                <input type="hidden" name="_method" value="DELETE" data-original-title="" title="" />
+                <button onclick="fn_getFormActionForDelete(this.id); return confirm('Estas seguro que quieres eliminar este elemento');" id="main_toolbar_btn_delete">
+                  Eliminar <span class="glyphicon glyphicon-trash">&#160;</span>
+                </button>
+            </form>
+        </li>
+    </ul>
+
      </div>
   </div>
   </nav>
