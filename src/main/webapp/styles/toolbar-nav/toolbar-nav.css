@@ -1,6 +1,9 @@
 /* Styles Toolbar gvNIX */
 
 .navbar-inverse{ border-bottom: 2px solid #577520;}
+nav.sidebar .glyphicon{ font-size: 16px;}
+/* aside .navbar-nav {margin: 0;} */
+
 
 /* Toobar nav top menu */
 
@@ -84,7 +87,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
   }
   body.left nav.navbar-fixed-side-left {
     left: 0;
-    /* margin-left: -160px; */ /* TBC temp para mostrar siempre*/
+    margin-left: -160px; /* TBC temp para mostrar siempre*/
     float: left;
     z-index: 8000;
   }
@@ -126,10 +129,11 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     nav.sidebar .navbar-nav > li:hover{
       border-top-color: rgba(255,255,255,0.2);
       border-bottom-color: rgba(0,0,0,0.2);
-    }
-
-    /*adds border top to first nav box */
-    nav.sidebar .navbar-nav > li:first-child{
+      -webkit-transition: background .5s;
+      -moz-transition: background .5s;
+      -o-transition: background .5s;
+      -ms-transition: background .5s;
+      transition: background .5s;
     }
 
     /* adds background on hover */
@@ -139,8 +143,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     }
     /* removes border last element */
     nav.sidebar .navbar-nav > li.last{
-      /* border-bottom: none; */
-      /*TBC*/
+      border-bottom: none;
     }
     /* Colors/style dropdown box*/
     nav.sidebar .navbar-nav .open .dropdown-menu {
@@ -172,20 +175,6 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     nav.sidebar li {
       width: 100%;
     }
-    /*for hiden things when navbar hidden*/
-    nav.sidebar .forAnimate{
-      opacity: 0;
-    }
-}
-nav.sidebar:hover .forAnimate{
-  opacity: 1;
-}
-nav.sidebar .glyphicon{
-  font-size: 16px;
-}
-aside .navbar-nav {
-    margin: 0;
-}
 
 /* Toolbar nav left - sidebar menu */
 
@@ -208,6 +197,9 @@ aside .navbar-nav {
     }
     /* Move nav to full on mouse over*/
     nav.navbar-fixed-side-left:hover{
+      margin-left: 0px;
+    }
+    body.left nav.sidebar:hover{
       margin-left: 0px;
     }
     nav.navbar-fixed-side-left .glyphicon{
@@ -237,6 +229,9 @@ aside .navbar-nav {
     }
     /* Move nav to full on mouse over*/
     nav.navbar-fixed-side-right:hover{
+      margin-right: 0px;
+    }
+    body.right nav.sidebar:hover{
       margin-right: 0px;
     }
     nav.navbar-fixed-side-right .glyphicon{
