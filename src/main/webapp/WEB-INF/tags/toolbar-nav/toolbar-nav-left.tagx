@@ -9,19 +9,22 @@ xmlns:spring="http://www.springframework.org/tags" version="2.0">
   <aside>
     <nav class="navbar navbar-inverse sidebar navbar-fixed-side-left" role="navigation">
         <div class="container-fluid">
+
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".left-navbar-collapse">
+          <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".left-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar">&#160;</span>
             <span class="icon-bar">&#160;</span>
             <span class="icon-bar">&#160;</span>
-          </button>
+          </button> -->
+
           <a class="navbar-brand" href="#">Tools<span class="pull-right glyphicon glyphicon-chevron-right" data-toggle="tooltip" title="Show toolbar"></span></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse left-navbar-collapse">
+        <!-- <div class="collapse navbar-collapse left-navbar-collapse"> -->
+        <div class="left-navbar-collapse">
           <ul class="nav navbar-nav">
           <!-- links with text-->
             <li><a href="#">Tool 1<span class="pull-right glyphicon glyphicon-align-justify" data-toggle="tooltip" title="Tooltip on right"></span></a></li>
