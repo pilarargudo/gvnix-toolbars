@@ -64,15 +64,26 @@ body.top .navbar-fixed-top + .navbar-fixed-top {
     border-color: #ccc;
     box-shadow: 0 0 2px 0 #ccc;
   }
+
+body.bottom .navbar-fixed-bottom {
+    border-color: #ccc;
+    box-shadow: 0 -1px 3px 0 #ccc;
+  }
+
 body.top .sidebar.navbar-fixed-top,
 body.top .navbar-default.navbar-fixed-top{
    margin-top: 52px;
    }
 
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-brand,
 body.top .navbar-default.navbar-fixed-top .navbar-brand {
     font-weight: bold;
     font-size: 14px;
 }
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-brand:hover,
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-brand:focus
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li a:hover,
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-brand,
 body.top .navbar-default.navbar-fixed-top .navbar-brand:hover,
 body.top .navbar-default.navbar-fixed-top .navbar-brand:focus
 body.top .navbar-default.navbar-fixed-top .navbar-nav li a:hover,
@@ -80,19 +91,21 @@ body.top .navbar-default.navbar-fixed-top .navbar-brand{
     color: #43600E;
 }
 
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li {
   min-height: 50px;
   border-left: 1px solid #f2f2f2;
   border-right: 1px solid #ffffff;
   }
-
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li:first-child,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li:first-child {
   border-left: none;
   }
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li:last-child,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li:last-child {
   border-right: none;
   }
-
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li button{
   line-height: 20px;
 }
@@ -104,11 +117,24 @@ body.top .navbar-default.navbar-fixed-top .navbar-nav li a{
   min-height: 52px;
   border-bottom: 2px solid transparent;
   }
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li a{
+  color: #999;
+  display: block;
+  min-height: 52px;
+  border-top: 2px solid transparent;
+  }
+
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button:hover,
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li a:hover,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li button:hover,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li a:hover{
   color: #608224;
   border-color: #608224;
+  background-color: #F2F2F2;
 }
+body.bottom .navbar-default.navbar-fixed-bottom .fa,
+body.bottom .navbar-default.navbar-fixed-bottom .glyphicon,
 body.top .navbar-default.navbar-fixed-top .fa,
 body.top .navbar-default.navbar-fixed-top .glyphicon {
     margin:0 10px;
