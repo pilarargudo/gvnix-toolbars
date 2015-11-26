@@ -1,8 +1,31 @@
 /* Styles Toolbar gvNIX */
 
 .navbar-inverse{ border-bottom: 2px solid #577520;}
-nav.sidebar .glyphicon{ font-size: 16px;}
+nav.sidebar .fa, nav.sidebar .glyphicon{ font-size: 16px;}
  aside .navbar-nav {margin: 0; width: 100%}
+
+.navbar-nav button{
+  border: none;
+  background-color: transparent;
+  color: #acc47f;
+  border-top: 2px solid rgba(255,255,255,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  min-height: 50px;
+  outline: none;
+  margin: 0;
+   padding: 0 15px;
+}
+aside .navbar-nav button{
+  width: 100%;
+  display: block;
+}
+
+.navbar-nav button span {padding: 15px 0;}
+
+.navbar-inverse .navbar-nav > li > button:hover {
+    color: #fff;
+}
+
 
 
 /* Toobar nav top menu */
@@ -86,7 +109,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
   }
   body.left nav.navbar-fixed-side-left {
     left: 0;
-    margin-left: -160px;
+    /* margin-left: -160px; */
     float: left;
     z-index: 8000;
   }
@@ -202,6 +225,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     body.left nav.sidebar:hover{
       margin-left: 0px;
     }
+    nav.navbar-fixed-side-left .fa,
     nav.navbar-fixed-side-left .glyphicon{
       margin-left: 15px;
     }
@@ -234,8 +258,13 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     body.right nav.sidebar:hover{
       margin-right: 0px;
     }
+    nav.navbar-fixed-side-right ul.nav.navbar-nav .fa,
     nav.navbar-fixed-side-right ul.nav.navbar-nav .glyphicon{
       margin-left: -22px;
+    }
+    nav.navbar-fixed-side-right ul.nav.navbar-nav button .fa,
+    nav.navbar-fixed-side-right ul.nav.navbar-nav button .glyphicon{
+      margin-left: 0px;
     }
   }
 
