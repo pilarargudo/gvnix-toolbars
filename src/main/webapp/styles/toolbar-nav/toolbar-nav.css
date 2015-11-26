@@ -13,8 +13,8 @@
 /** body**/
 
 body.top .navbar-fixed-top + .navbar-fixed-top { margin-top: 52px;}
-body.top.left .navbar-fixed-top + aside > nav.sidebar { top: 104px;}
-body.top.right .navbar-fixed-top + aside + aside > nav.sidebar { top: 105px;}
+body.top.left .navbar-fixed-top + aside > nav.sidebar { top: 98px;}
+body.top.right .navbar-fixed-top + aside + aside > nav.sidebar { top: 98px;}
 body.left .navbar-fixed-top + aside > nav.sidebar { top: 52px;}
 body.right .navbar-fixed-top + aside + aside > nav.sidebar { top: 52px;}
 
@@ -39,6 +39,10 @@ nav.sidebar { z-index: 800;}
 /*** Toolbar nav Top/Bottom ***/
 /*****************************/
 
+body.bottom .navbar.navbar-default.navbar-fixed-bottom,
+body.top .navbar.navbar-default.navbar-fixed-top{
+  min-height: 40px;
+}
 body.top .navbar-fixed-top + .navbar-fixed-top {
     border-color: #ccc;
     box-shadow: 1px 1px 5px -1px #A9A9A9;
@@ -53,6 +57,7 @@ body.bottom .navbar-fixed-bottom .navbar-brand,
 body.top .navbar-default.navbar-fixed-top .navbar-brand {
     font-weight: bold;
     font-size: 14px;
+    line-height: 15px;
 }
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-brand:hover,
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-brand:focus
@@ -67,7 +72,7 @@ body.top .navbar-default.navbar-fixed-top .navbar-brand{
 
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li {
-  min-height: 50px;
+  min-height: 40px;
   border-left: 1px solid #f2f2f2;
   border-right: 1px solid #ffffff;
   }
@@ -81,7 +86,7 @@ body.top .navbar-default.navbar-fixed-top .navbar-nav li:last-child {
   }
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li button{
-  line-height: 20px;
+  line-height: 15px;
 }
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li a,
@@ -89,8 +94,13 @@ body.top .navbar-default.navbar-fixed-top .navbar-nav li button,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li a{
   color: #999;
   display: block;
-  min-height: 52px;
+  min-height: 42px;
   border-bottom: 2px solid transparent;
+  }
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li a{
+  border-bottom: none;
+  border-top: 2px solid transparent;
   }
 
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button:hover,
