@@ -1,22 +1,30 @@
 /* Styles Toolbar gvNIX */
 
+/** main navbar **/
+
 .navbar-inverse{
   border-color: #52692A;
 }
 .navbar-inverse.navbar-fixed-top{
-  border-bottom: 2px solid #52692A;
-  box-shadow: 0 0 2px 0 #ccc;
+  border-bottom: 2px solid #526F20;
+  box-shadow: 0 2px 2px 0 #ccc;
 }
 
-
-nav.sidebar .fa, nav.sidebar .glyphicon{ font-size: 16px;}
- aside .navbar-nav {margin: 0; width: 100%}
-
 /** body**/
-body.bottom { padding-bottom: 70px; }
-body.top { padding-top: 140px; }
 
-/** buttons **/
+body.top .navbar-fixed-top + .navbar-fixed-top { margin-top: 52px;}
+body.top.left .navbar-fixed-top + aside > nav.sidebar { top: 104px;}
+body.top.right .navbar-fixed-top + aside + aside > nav.sidebar { top: 105px;}
+body.left .navbar-fixed-top + aside > nav.sidebar { top: 52px;}
+body.right .navbar-fixed-top + aside + aside > nav.sidebar { top: 52px;}
+
+/** z-index **/
+
+body.top .navbar-fixed-top + .navbar-fixed-top {   z-index: 1020;}
+nav.sidebar { z-index: 800;}
+
+/** common elements **/
+
 .navbar-nav button{
   border: none;
   background-color: transparent;
@@ -26,43 +34,14 @@ body.top { padding-top: 140px; }
   margin: 0;
   padding: 0 15px;
 }
-aside .navbar-nav button{
-  width: 100%;
-  display: block;
-}
-aside .navbar-nav button span {padding: 15px 0;}
-aside .navbar-nav button{
-  border-top: 2px solid rgba(255,255,255,0.1);
-  border-bottom: 2px solid rgba(0,0,0,0.1);
-}
 
-.navbar-inverse .navbar-nav > li > button:hover {
-    color: #fff;
-}
+/*******************************/
+/*** Toolbar nav Top/Bottom ***/
+/*****************************/
 
-/* Toobar nav top menu */
-
-body.top > .navbar.navbar-default.navbar-fixed-top + #wrap-main{
-  padding-top: 60px;
-}
-body.top > aside + #wrap-main{
-  padding: 0px 20px 0;
-}
-
-@media (max-width: 768px) {
- body.top > .navbar.navbar-default.navbar-fixed-top + #wrap-main,
- body.top > aside + #wrap-main{
-    padding: 40px 20px 0;
-  }
-}
-
-/* Toolbar nav Top/Bottom */
-
-body.top .navbar-fixed-top + aside>.sidebar.navbar-fixed-top,
 body.top .navbar-fixed-top + .navbar-fixed-top {
-    z-index: 1030;
     border-color: #ccc;
-    box-shadow: 0 0 2px 0 #ccc;
+    box-shadow: 1px 1px 5px -1px #A9A9A9;
   }
 
 body.bottom .navbar-fixed-bottom {
@@ -70,12 +49,7 @@ body.bottom .navbar-fixed-bottom {
     box-shadow: 0 -1px 3px 0 #ccc;
   }
 
-body.top .sidebar.navbar-fixed-top,
-body.top .navbar-default.navbar-fixed-top{
-   margin-top: 52px;
-   }
-
-body.bottom .navbar-default.navbar-fixed-bottom .navbar-brand,
+body.bottom .navbar-fixed-bottom .navbar-brand,
 body.top .navbar-default.navbar-fixed-top .navbar-brand {
     font-weight: bold;
     font-size: 14px;
@@ -109,20 +83,14 @@ body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li button{
   line-height: 20px;
 }
-
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
+body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li a,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li button,
 body.top .navbar-default.navbar-fixed-top .navbar-nav li a{
   color: #999;
   display: block;
   min-height: 52px;
   border-bottom: 2px solid transparent;
-  }
-body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button,
-body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li a{
-  color: #999;
-  display: block;
-  min-height: 52px;
-  border-top: 2px solid transparent;
   }
 
 body.bottom .navbar-default.navbar-fixed-bottom .navbar-nav li button:hover,
@@ -140,13 +108,29 @@ body.top .navbar-default.navbar-fixed-top .glyphicon {
     margin:0 10px;
 }
 
-/* Toolbar - sidebar menu */
 
-header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
-  margin-top: 52px;
+/****************************/
+/*** Toolbar nav Sidebar ***/
+/**************************/
+
+aside .navbar-nav {margin: 0; width: 100%}
+
+/* button */
+aside .navbar-nav button{
+  width: 100%;
+  display: block;
+  border-top: 2px solid rgba(255,255,255,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
 }
+aside .navbar-nav button span {padding: 15px 0;}
+aside .navbar-inverse .navbar-nav > li > button:hover { color: #fff}
 
-@media (min-width: 768px) {
+nav.sidebar .fa,
+nav.sidebar .glyphicon{ font-size: 16px;}
+
+
+/** sidebar with for desktop screens **/
+
   nav.sidebar,
   #wrap-main{
       -webkit-transition: margin 200ms ease-out;
@@ -154,20 +138,14 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
         -o-transition: margin 200ms ease-out;
         transition: margin 200ms ease-out;
   }
-/*   nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover,
-  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
-      color: #CCC;
-      background-color: transparent;
-    } */
   nav.sidebar.navbar {
-    border-radius: 0px; /*Remove rounded coners*/
+    border-radius: 0px; /*Remove rounded corners*/
   }
 
   /*gives sidebar width/height*/
   nav.sidebar {
     position: fixed;
     border-width: 0;
-    z-index: 8000;
     min-height: 5px;
     height: 100%;
     min-width: 5px;
@@ -176,39 +154,28 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     margin-bottom: 0;
     border: 0px solid transparent;
     background: #608224;
-    top: 52px;
-  }
-
-  header.navbar-fixed-top + aside > nav.sidebar{
-    margin-top: -19px;
   }
   body.left nav.navbar-fixed-side-left {
     left: 0;
     margin-left: -160px;
     float: left;
-    z-index: 8000;
   }
   body.right nav.navbar-fixed-side-right {
     right: 0;
     margin-right: -160px;
     float: right;
   }
-}
 
-.sidebar.navbar-fixed-side-right{
-    border-left: 1px solid #52692A;
-    box-shadow: 0px 3px 1px 2px #ccc;
-}
-.sidebar.navbar-fixed-side-left {
-    border-right: 1px solid #52692A;
-    box-shadow: 2px 1px 2px 0px #ccc;
-}
+  .sidebar.navbar-fixed-side-right{
+      border-left: 1px solid #52692A;
+      box-shadow: 0px 3px 1px 2px #ccc;
+  }
+  .sidebar.navbar-fixed-side-left {
+      border-right: 1px solid #52692A;
+      box-shadow: 2px 1px 2px 0px #ccc;
+  }
 
-
-/* sidebar nav */
-
-@media (min-width: 768px) {
-    /*Center Brand*/
+  /*Center Brand*/
     nav.sidebar.navbar>.container .navbar-brand,
     nav.sidebar.navbar>.container-fluid .navbar-brand {
       border-bottom: 5px solid #577520;
@@ -252,49 +219,20 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     nav.sidebar .navbar-nav > li:last-child a{
       border-bottom: none;
     }
-    /* Colors/style dropdown box*/
-    /*TBC dropdown menu in sidebar*/
-    /* nav.sidebar .navbar-nav .open .dropdown-menu {
-      position: static;
-      float: none;
-      width: auto;
-      margin-top: 0;
-      background-color: transparent;
-      border: 0;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    } */
     /*allows nav box to use 100% width*/
     nav.sidebar .navbar-collapse,
     nav.sidebar .container-fluid{
       padding: 0;
     }
-    /*colors dropdown box text */
-/*     nav.sidebar.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-     color: #acc47f;
-    } */
-/*     nav.sidebar.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
-      color: #fff;
-    } */
-   /*  nav.sidebar.navbar-inverse .navbar-nav .dropdown-menu .divider{
-      background-color: #acc47f;
-    } */
     /*give sidebar 100% width;*/
     nav.sidebar li {
       width: 100%;
     }
 
-/* Toolbar nav left - sidebar menu */
+/*********************************/
+/*** Toolbar nav Left Sidebar ***/
+/*******************************/
 
-@media (min-width: 768px) {
-
-    /*Allow main to be next to Nav*/
-    body.left > aside + #wrap-main{
-      position: absolute;
-      width: calc(100% - 40px); /*keeps 100% minus nav size*/
-      margin-left: 20px;
-      float: right;
-    }
     /*lets nav bar to be showed on mouseover*/
     body.left > aside:hover + #wrap-main{
       margin-left: 200px;
@@ -314,20 +252,12 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     nav.navbar-fixed-side-left .glyphicon{
       margin-left: 15px;
     }
-}
 
-/* Toolbar nav right - sidebar menu */
 
-/*small/medium side display*/
-@media (min-width: 768px) {
+/**********************************/
+/*** Toolbar nav Right Sidebar ***/
+/********************************/
 
-    /*Allow main to be next to Nav*/
-    body.right >  #wrap-main{ /* aside go after*/
-      position: absolute;
-      width: calc(100% - 40px); /*keeps 100% minus nav size*/
-      margin-right: 40px;
-      float: left;
-    }
     /*lets nav bar to be showed on mouseover*/
     body.right > aside:hover + #wrap-main{
       margin-left: -200px;
@@ -351,33 +281,72 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     nav.navbar-fixed-side-right ul.nav.navbar-nav button .glyphicon{
       margin-left: 0px;
     }
-  }
 
 
-/* NOTA: ivace proyecto: es posible dos toolbars activos */
+/*small/medium side display*/
 
-/* body.left .sidebar.navbar-fixed-top{
-  margin-top: 101px;
+
+
+@media (max-width: 767px) {
+  body.left > aside + #wrap-main{
+      position: absolute;
+      width: calc(100% -60px); /*keeps 100% minus nav size*/
+      margin-left: 20px;
+      float: right;
+      background: yellow;
+    }
+  body.right >  #wrap-main{ /* aside go after*/
+      position: absolute;
+      width: calc(100% -60px); /*keeps 100% minus nav size*/
+      margin-right: 60px;
+      float: left;
+      background: yellow;
+    }
+
 }
-body.left > aside + #wrap-main {
-  padding: 60px 20px 0;
+@media (min-width: 769px) {
+  body.left > aside + #wrap-main{
+      position: absolute;
+      width: calc(100% - 80px); /*keeps 100% minus nav size*/
+      margin-left: 40px;
+      float: right;
+      background: red;
+    }
+  body.right >  #wrap-main{ /* aside go after*/
+      position: absolute;
+      width: calc(100% - 80px); /*keeps 100% minus nav size*/
+      margin-right: 60px;
+      float: left;
+      background: red;
+    }
+
 }
 
-@media (max-width: 768px) {
- body.top > .navbar.navbar-default.navbar-fixed-top + #wrap-main,
- body.left > aside + #wrap-main{
-    padding: 100px 20px 0;
-  }
- body.top .navbar-fixed-top + aside>.sidebar.navbar-fixed-top{
-   z-index: 800;
- }
-}
- */
+
 @media (min-width: 768px) {
-  body.top .navbar-fixed-top + .navbar-fixed-top {
-    z-index: 900;
-  }
-  body.left .sidebar.navbar-fixed-top{
-     z-index: 800;
-  }
+
 }
+@media (min-width: 992px) {
+  body.bottom { padding-bottom: 70px; }
+  body.top { padding-top: 130px;}
+
+  /*Allow main to be next to Nav*/
+  body.left > aside + #wrap-main{
+      position: absolute;
+      width: calc(100% - 40px); /*keeps 100% minus nav size*/
+      margin-left: 20px;
+      float: right;
+      background: blue;
+  }
+  body.right >  #wrap-main{ /* aside go after*/
+      position: absolute;
+      width: calc(100% - 40px); /*keeps 100% minus nav size*/
+      margin-right: 40px;
+      float: left;
+      background: blue;
+   }
+}
+@media (min-width: 1200px) {
+
+}
+
