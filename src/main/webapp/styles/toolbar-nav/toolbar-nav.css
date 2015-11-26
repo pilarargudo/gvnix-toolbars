@@ -1,32 +1,44 @@
 /* Styles Toolbar gvNIX */
 
-.navbar-inverse{ border-bottom: 2px solid #577520;}
+.navbar-inverse{
+  border-color: #52692A;
+}
+.navbar-inverse.navbar-fixed-top{
+  border-bottom: 2px solid #52692A;
+  box-shadow: 0 0 2px 0 #ccc;
+}
+
+
 nav.sidebar .fa, nav.sidebar .glyphicon{ font-size: 16px;}
  aside .navbar-nav {margin: 0; width: 100%}
 
+/** body**/
+body.bottom { padding-bottom: 70px; }
+body.top { padding-top: 140px; }
+
+/** buttons **/
 .navbar-nav button{
   border: none;
   background-color: transparent;
   color: #acc47f;
-  border-top: 2px solid rgba(255,255,255,0.1);
-  border-bottom: 2px solid rgba(0,0,0,0.1);
   min-height: 50px;
   outline: none;
   margin: 0;
-   padding: 0 15px;
+  padding: 0 15px;
 }
 aside .navbar-nav button{
   width: 100%;
   display: block;
 }
-
-.navbar-nav button span {padding: 15px 0;}
+aside .navbar-nav button span {padding: 15px 0;}
+aside .navbar-nav button{
+  border-top: 2px solid rgba(255,255,255,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+}
 
 .navbar-inverse .navbar-nav > li > button:hover {
     color: #fff;
 }
-
-
 
 /* Toobar nav top menu */
 
@@ -44,25 +56,63 @@ body.top > aside + #wrap-main{
   }
 }
 
-/* Toolbar nav Top */
+/* Toolbar nav Top/Bottom */
 
 body.top .navbar-fixed-top + aside>.sidebar.navbar-fixed-top,
 body.top .navbar-fixed-top + .navbar-fixed-top {
     z-index: 1030;
+    border-color: #ccc;
+    box-shadow: 0 0 2px 0 #ccc;
   }
 body.top .sidebar.navbar-fixed-top,
 body.top .navbar-default.navbar-fixed-top{
    margin-top: 52px;
    }
 
-body.top .navbar-default.navbar-fixed-top .navbar-nav>li>a{ color: #acc47f;}
-
+body.top .navbar-default.navbar-fixed-top .navbar-brand {
+    font-weight: bold;
+    font-size: 14px;
+}
 body.top .navbar-default.navbar-fixed-top .navbar-brand:hover,
 body.top .navbar-default.navbar-fixed-top .navbar-brand:focus
-body.top .navbar-default.navbar-fixed-top .navbar-nav>li>a:hover,
+body.top .navbar-default.navbar-fixed-top .navbar-nav li a:hover,
 body.top .navbar-default.navbar-fixed-top .navbar-brand{
     color: #43600E;
+}
+
+body.top .navbar-default.navbar-fixed-top .navbar-nav li {
+  min-height: 50px;
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid #ffffff;
   }
+
+body.top .navbar-default.navbar-fixed-top .navbar-nav li:first-child {
+  border-left: none;
+  }
+body.top .navbar-default.navbar-fixed-top .navbar-nav li:last-child {
+  border-right: none;
+  }
+
+body.top .navbar-default.navbar-fixed-top .navbar-nav li button{
+  line-height: 20px;
+}
+
+body.top .navbar-default.navbar-fixed-top .navbar-nav li button,
+body.top .navbar-default.navbar-fixed-top .navbar-nav li a{
+  color: #999;
+  display: block;
+  min-height: 52px;
+  border-bottom: 2px solid transparent;
+  }
+body.top .navbar-default.navbar-fixed-top .navbar-nav li button:hover,
+body.top .navbar-default.navbar-fixed-top .navbar-nav li a:hover{
+  color: #608224;
+  border-color: #608224;
+}
+body.top .navbar-default.navbar-fixed-top .fa,
+body.top .navbar-default.navbar-fixed-top .glyphicon {
+    margin:0 10px;
+}
 
 /* Toolbar - sidebar menu */
 
@@ -88,8 +138,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
   }
 
   /*gives sidebar width/height*/
-  body.right nav.sidebar,
-  body.left nav.sidebar {
+  nav.sidebar {
     position: fixed;
     border-width: 0;
     z-index: 8000;
@@ -109,7 +158,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
   }
   body.left nav.navbar-fixed-side-left {
     left: 0;
-    /* margin-left: -160px; */
+    margin-left: -160px;
     float: left;
     z-index: 8000;
   }
@@ -119,6 +168,16 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     float: right;
   }
 }
+
+.sidebar.navbar-fixed-side-right{
+    border-left: 1px solid #52692A;
+    box-shadow: 0px 3px 1px 2px #ccc;
+}
+.sidebar.navbar-fixed-side-left {
+    border-right: 1px solid #52692A;
+    box-shadow: 2px 1px 2px 0px #ccc;
+}
+
 
 /* sidebar nav */
 
@@ -207,7 +266,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     body.left > aside + #wrap-main{
       position: absolute;
       width: calc(100% - 40px); /*keeps 100% minus nav size*/
-      margin-left: 40px;
+      margin-left: 20px;
       float: right;
     }
     /*lets nav bar to be showed on mouseover*/
@@ -268,9 +327,6 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     }
   }
 
-/* Toobar nav bottom - sidebar menu */
-
-body.bottom { padding-bottom: 70px; }
 
 /* NOTA: ivace proyecto: es posible dos toolbars activos */
 
