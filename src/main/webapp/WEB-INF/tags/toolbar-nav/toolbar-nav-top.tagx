@@ -21,6 +21,20 @@ xmlns:spring="http://www.springframework.org/tags" version="2.0">
 
     <div class="collapse navbar-collapse top-navbar-collapse">
       <ul class="nav navbar-nav">
+            <li><a href="#">Tool 1<span class="pull-right glyphicon glyphicon-align-justify" data-toggle="tooltip" title="Tooltip on bottom"></span></a></li>
+            <li><a href="#">Tool 2<span class="pull-right glyphicon glyphicon-cog" data-toggle="tooltip" title="Tooltip on bottom"></span></a></li>
+            <li><a href="#">Tool 3<span class="pull-right glyphicon glyphicon-trash" data-toggle="tooltip" title="Tooltip on bottom"></span></a></li>
+        </ul>
+        <!-- links only icons -->
+        <ul class="nav navbar-nav">
+            <li><a href="#"><span class="pull-right glyphicon glyphicon-pencil" data-toggle="tooltip" title="Tooltip on bottom"></span></a></li>
+            <li><a href="#"><span class="pull-right glyphicon glyphicon-zoom-in" data-toggle="tooltip" title="Tooltip on bottom"></span></a></li>
+            <li><a href="#"><span class="pull-right glyphicon glyphicon-time" data-toggle="tooltip" title="Tooltip on bottom"></span></a></li>
+          </ul>
+
+
+
+      <ul class="nav navbar-nav">
         <li>
             <button type="submit" title="Botón SQL" onclick="fn_changeFormAttribute(this.id); fn_getFormAction(this.id)" id="b_main_toolbar_funcion_sql" formaction="funcionsql" form="">
             Botón SQL <i class="fa fa-database">&#160;</i>
