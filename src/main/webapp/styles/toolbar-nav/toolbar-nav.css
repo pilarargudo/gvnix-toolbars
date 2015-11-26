@@ -2,7 +2,7 @@
 
 .navbar-inverse{ border-bottom: 2px solid #577520;}
 nav.sidebar .glyphicon{ font-size: 16px;}
-/* aside .navbar-nav {margin: 0;} */
+ aside .navbar-nav {margin: 0; width: 100%}
 
 
 /* Toobar nav top menu */
@@ -55,12 +55,11 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
         -o-transition: margin 200ms ease-out;
         transition: margin 200ms ease-out;
   }
-  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover,
+/*   nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover,
   nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
       color: #CCC;
       background-color: transparent;
-    }
-
+    } */
   nav.sidebar.navbar {
     border-radius: 0px; /*Remove rounded coners*/
   }
@@ -87,7 +86,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
   }
   body.left nav.navbar-fixed-side-left {
     left: 0;
-    margin-left: -160px; /* TBC temp para mostrar siempre*/
+    margin-left: -160px;
     float: left;
     z-index: 8000;
   }
@@ -104,7 +103,6 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     /*Center Brand*/
     nav.sidebar.navbar>.container .navbar-brand,
     nav.sidebar.navbar>.container-fluid .navbar-brand {
-      margin-left: 0px;
       border-bottom: 5px solid #577520;
     }
     /*Center Brand*/
@@ -116,8 +114,8 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     }
     /*adds border to bottom nav boxes*/
     nav.sidebar .navbar-nav > li{
-      min-height: 30px;
-      line-height: 30px;
+      min-height: 50px;
+      line-height: 50px;
       text-indent: 20px;
     }
     nav.sidebar .navbar-nav > li a{
@@ -125,6 +123,7 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
       color: #acc47f;
       border-top: 2px solid rgba(255,255,255,0.1);
       border-bottom: 2px solid rgba(0,0,0,0.1);
+      min-height: 50px;
     }
     nav.sidebar .navbar-nav > li:hover{
       border-top-color: rgba(255,255,255,0.2);
@@ -142,11 +141,12 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
       background-color: #43600E;
     }
     /* removes border last element */
-    nav.sidebar .navbar-nav > li.last{
+    nav.sidebar .navbar-nav > li:last-child a{
       border-bottom: none;
     }
     /* Colors/style dropdown box*/
-    nav.sidebar .navbar-nav .open .dropdown-menu {
+    /*TBC dropdown menu in sidebar*/
+    /* nav.sidebar .navbar-nav .open .dropdown-menu {
       position: static;
       float: none;
       width: auto;
@@ -155,22 +155,22 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
       border: 0;
       -webkit-box-shadow: none;
       box-shadow: none;
-    }
+    } */
     /*allows nav box to use 100% width*/
     nav.sidebar .navbar-collapse,
     nav.sidebar .container-fluid{
       padding: 0;
     }
     /*colors dropdown box text */
-    nav.sidebar.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+/*     nav.sidebar.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
      color: #acc47f;
-    }
-    nav.sidebar.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+    } */
+/*     nav.sidebar.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
       color: #fff;
-    }
-    nav.sidebar.navbar-inverse .navbar-nav .dropdown-menu .divider{
+    } */
+   /*  nav.sidebar.navbar-inverse .navbar-nav .dropdown-menu .divider{
       background-color: #acc47f;
-    }
+    } */
     /*give sidebar 100% width;*/
     nav.sidebar li {
       width: 100%;
@@ -234,8 +234,8 @@ header.navbar-fixed-top + aside > nav.sidebar.navbar-fixed-top{
     body.right nav.sidebar:hover{
       margin-right: 0px;
     }
-    nav.navbar-fixed-side-right .glyphicon{
-      margin-right: 15px;
+    nav.navbar-fixed-side-right ul.nav.navbar-nav .glyphicon{
+      margin-left: -22px;
     }
   }
 
