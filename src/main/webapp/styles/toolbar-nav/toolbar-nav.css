@@ -373,6 +373,7 @@ nav.sidebar .glyphicon{ font-size: 16px;}
     body.bottom .navbar.navbar-default.navbar-fixed-bottom .navbar-header,
     body.top .navbar.navbar-default.navbar-fixed-top .navbar-header{ width:  auto;}
 
+
 }
 @media (min-width: 769px) {
   body.left > aside + #wrap-main{
@@ -387,13 +388,13 @@ nav.sidebar .glyphicon{ font-size: 16px;}
       margin-right: 60px;
       float: left;
     }
+   .bs-footer {
+    margin-top: -30px !important;
+    padding-top: 10px !important;
+    }
 }
 
-
-
-
 @media (min-width: 992px) {
-  body.bottom .bs-footer { padding-bottom: 70px; }
   body.top { padding-top: 120px;}
 
   /*Allow main to be next to Nav*/
@@ -409,6 +410,16 @@ nav.sidebar .glyphicon{ font-size: 16px;}
       margin-right: 40px;
       float: left;
    }
+  .bs-footer {
+    margin-top: 120px !important;
+    padding-top: 10px !important;
+  }
 }
 
+@media (min-width: 1200px) {
+    .bs-footer {
+    margin-top: 0px !important;
+    padding-top: 10px !important;
+  }
+}
 
