@@ -295,24 +295,26 @@ nav.sidebar .glyphicon{ font-size: 16px;}
     }
 
 
-/*small/medium side display*/
-
+/*********************/
+/*** mediaqueries ***/
+/*******************/
 
 
 @media (max-width: 767px) {
+  body.top {
+      padding-top: 110px;
+  }
   body.left > aside + #wrap-main{
       position: absolute;
       width: calc(100% -80px); /*keeps 100% minus nav size*/
       margin-left: 40px;
       float: right;
-      background: yellow;
     }
   body.right >  #wrap-main{ /* aside go after*/
       position: absolute;
       width: calc(100% - 80px); /*keeps 100% minus nav size*/
       margin-right: 40px;
       float: left;
-      background: yellow;
     }
 
     /*** navbar default Bootstrap ***/
@@ -388,7 +390,7 @@ nav.sidebar .glyphicon{ font-size: 16px;}
 }
 
 
-@media (min-width: 768px) {}
+
 
 @media (min-width: 992px) {
   body.bottom .bs-footer { padding-bottom: 70px; }
@@ -400,7 +402,6 @@ nav.sidebar .glyphicon{ font-size: 16px;}
       width: calc(100% - 40px); /*keeps 100% minus nav size*/
       margin-left: 20px;
       float: right;
-      background: blue;
   }
   body.right >  #wrap-main{ /* aside go after*/
       position: absolute;
@@ -410,5 +411,4 @@ nav.sidebar .glyphicon{ font-size: 16px;}
    }
 }
 
-@media (min-width: 1200px) {}
 
